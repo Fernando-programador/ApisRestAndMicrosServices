@@ -1,0 +1,24 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-ServicosApplication<servicos>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.micro.servicos.ServicosApplication",
+            "projectName": "servicos",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-GatewayZullApplication<gateway_zull>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.meugateway.gateway_zull.GatewayZullApplication",
+            "projectName": "gateway_zull",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
