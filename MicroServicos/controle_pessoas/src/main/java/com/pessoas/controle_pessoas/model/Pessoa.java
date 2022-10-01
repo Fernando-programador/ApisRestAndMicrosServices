@@ -1,4 +1,6 @@
-public class Pessoas {
+package com.pessoas.controle_pessoas.model;
+
+public class Pessoa {
     
     private String nome;
     private String email;
