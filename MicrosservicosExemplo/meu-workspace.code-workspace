@@ -1,0 +1,21 @@
+{
+	"folders": [
+		{
+			"name": "eureka-service",
+			"path": "eureka-service"
+		},
+		{
+			"name": "zuul-service",
+			"path": "zuul-service"
+		},
+		{
+			"path": "controle-pessoas-ms"
+		},
+		{
+			"path": "controle-animais-ms"
+		},
+		{
+			"path": "arquitetura"
+		}
+	]
+}
