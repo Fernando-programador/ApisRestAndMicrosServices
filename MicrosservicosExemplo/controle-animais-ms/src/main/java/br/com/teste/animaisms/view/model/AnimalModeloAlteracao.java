@@ -1,18 +1,18 @@
 package br.com.teste.animaisms.view.model;
 
 public class AnimalModeloAlteracao {
-    private String id;
+    private Integer id;
     private String nome;
     private Integer idade;
     private String raca;
     private Boolean vivo;
 
     //#region Get / Set
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

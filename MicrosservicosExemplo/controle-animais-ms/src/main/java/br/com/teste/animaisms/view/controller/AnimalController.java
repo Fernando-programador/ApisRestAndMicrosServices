@@ -63,7 +63,7 @@ public class AnimalController {
     }
 
     @GetMapping(value="/{dono}/lista")
-    public ResponseEntity<List<AnimalModeloResponse>> obterPorDono(@PathVariable String dono) {
+    public ResponseEntity<List<AnimalModeloResponse>> obterPorDono(@PathVariable Integer dono) {
         List<AnimalDto> dtos = service.obterPorDono(dono);
 
         if(dtos.isEmpty()){
@@ -79,7 +79,7 @@ public class AnimalController {
     }
     
     @GetMapping(value="/{id}")
-    public ResponseEntity<AnimalModeloResponse> obterPorId(@PathVariable String id) {
+    public ResponseEntity<AnimalModeloResponse> obterPorId(@PathVariable Integer id) {
         Optional<AnimalDto> Animal = service.obterPorId(id);
 
         if(Animal.isPresent()) {
@@ -93,7 +93,7 @@ public class AnimalController {
     }
 
     @PutMapping(value="/{id}")
-    public ResponseEntity<AnimalModeloResponse> atualizarAnimal(@PathVariable String id,
+    public ResponseEntity<AnimalModeloResponse> atualizarAnimal(@PathVariable Integer id,
         @Valid @RequestBody AnimalModeloAlteracao Animal) {
         ModelMapper mapper = new ModelMapper();
         AnimalDto dto = mapper.map(Animal, AnimalDto.class);
@@ -103,13 +103,13 @@ public class AnimalController {
     }
 
     @DeleteMapping(value="/{id}")
-    public ResponseEntity<Void> removerAnimal(@PathVariable String id) {
+    public ResponseEntity<Void> removerAnimal(@PathVariable Integer id) {
         service.removerAnimal(id);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
     @PatchMapping(value="/{id}")
-    public ResponseEntity<Void> definirMorto(@PathVariable String id) {
+    public ResponseEntity<Void> definirMorto(@PathVariable Integer id) {
         if(service.definirComoMorto(id)) {
             return new ResponseEntity<>(HttpStatus.OK);
         }

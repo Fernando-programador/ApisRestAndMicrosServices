@@ -7,7 +7,7 @@ import javax.validation.constraints.Size;
 public class PessoaModeloRequest {
     @NotBlank(message = "O nome deve possuir caracteres não brancos")
     @NotEmpty(message = "O nome deve ser preenchido")
-    @Size(min = 5, message = "O nome deve ter, no mínimo, 5 caracteres")
+    @Size(min = 2, message = "O nome deve ter, no mínimo, 5 caracteres")
     private String nome;
 
     @NotBlank(message = "O sobrenome deve possuir caracteres não brancos")

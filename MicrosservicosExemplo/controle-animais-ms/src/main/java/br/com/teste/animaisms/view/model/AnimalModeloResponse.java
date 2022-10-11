@@ -1,7 +1,7 @@
 package br.com.teste.animaisms.view.model;
 
 public class AnimalModeloResponse {
-    private String id;
+    private Integer id;
     private String dono;
     private String nome;
     private Integer idade;
@@ -9,11 +9,11 @@ public class AnimalModeloResponse {
     private Boolean vivo;
 
     //#region Get / Set
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

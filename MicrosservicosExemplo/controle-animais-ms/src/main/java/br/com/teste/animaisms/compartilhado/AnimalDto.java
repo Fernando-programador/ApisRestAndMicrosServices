@@ -1,27 +1,27 @@
 package br.com.teste.animaisms.compartilhado;
 
 public class AnimalDto {
-    private String id;
-    private String dono;
+    private Integer id;
+    private Integer dono;
     private String nome;
     private Integer idade;
     private String raca;
     private Boolean vivo;
 
     //#region Get / Set
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
-    public String getDono() {
+    public Integer getDono() {
         return dono;
     }
 
-    public void setDono(String dono) {
+    public void setDono(Integer dono) {
         this.dono = dono;
     }
 

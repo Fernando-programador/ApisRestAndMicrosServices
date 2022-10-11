@@ -5,12 +5,14 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import org.hibernate.integrator.spi.IntegratorService;
+
 @Entity
 public class Animal {
     @Id // vai transformar essa coluna em primary key
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private String id;
-    private String dono;
+    private Integer id;
+    private Integer dono;
     private String nome;
     private Integer idade;
     private String raca;
@@ -21,19 +23,19 @@ public class Animal {
     }
 
     //#region Get / Set
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
-    public String getDono() {
+    public Integer getDono() {
         return dono;
     }
 
-    public void setDono(String dono) {
+    public void setDono(Integer dono) {
         this.dono = dono;
     }
 

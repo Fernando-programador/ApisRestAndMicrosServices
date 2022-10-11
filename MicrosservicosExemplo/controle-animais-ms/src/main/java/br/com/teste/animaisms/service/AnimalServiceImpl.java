@@ -32,7 +32,7 @@ public class AnimalServiceImpl implements AnimalService {
     }
 
     @Override
-    public Optional<AnimalDto> obterPorId(String id) {
+    public Optional<AnimalDto> obterPorId(Integer id) {
         Optional<Animal> animal = repo.findById(id);
 
        if(animal.isPresent()) {
@@ -43,7 +43,7 @@ public class AnimalServiceImpl implements AnimalService {
     }
 
     @Override
-    public List<AnimalDto> obterPorDono(String dono) {
+    public List<AnimalDto> obterPorDono(Integer dono) {
         List<Animal> animais = repo.findByDono(dono);
 
         return animais.stream()
@@ -52,12 +52,12 @@ public class AnimalServiceImpl implements AnimalService {
     }
 
     @Override
-    public void removerAnimal(String id) {
+    public void removerAnimal(Integer id) {
         repo.deleteById(id);
     }
 
     @Override
-    public boolean definirComoMorto(String id) {
+    public boolean definirComoMorto(Integer id) {
         Optional<Animal> animal = repo.findById(id);
         if(animal.isPresent()) {
             animal.get().setVivo(false);
@@ -70,7 +70,7 @@ public class AnimalServiceImpl implements AnimalService {
     }
 
     @Override
-    public AnimalDto atualizarAnimal(String id, AnimalDto animal) {
+    public AnimalDto atualizarAnimal(Integer id, AnimalDto animal) {
         animal.setId(id);
         return salvarAnimal(animal);
     }
