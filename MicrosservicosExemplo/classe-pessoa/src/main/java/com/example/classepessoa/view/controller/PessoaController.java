@@ -22,10 +22,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.classepessoa.compartilhado.PessoaDto;
+import com.example.classepessoa.http.AnimaisFeignClients;
 import com.example.classepessoa.model.Pessoa;
 import com.example.classepessoa.service.PessoaService;
 import com.example.classepessoa.view.model.PessoaModeloRequest;
 import com.example.classepessoa.view.model.PessoaModeloResponse;
+import com.example.classepessoa.view.model.PessoaModeloResponseDetalhe;
 
 
 
@@ -35,6 +37,7 @@ import com.example.classepessoa.view.model.PessoaModeloResponse;
 public class PessoaController {
     @Autowired
     private PessoaService service;
+
 
     @GetMapping(value="/status")
     public String statusServico(@Value("${local.server.port}") String porta) {
@@ -67,12 +70,12 @@ public class PessoaController {
     }
     
     @GetMapping(value="/{id}")
-    public ResponseEntity<PessoaModeloResponse> obterPorId(@PathVariable Integer id) {
+    public ResponseEntity<PessoaModeloResponseDetalhe> obterPorId(@PathVariable Integer id) {
         Optional<PessoaDto> pessoa = service.obterPorId(id);
 
         if(pessoa.isPresent()) {
             return new ResponseEntity<>(
-                new ModelMapper().map(pessoa.get(), PessoaModeloResponse.class), 
+                new ModelMapper().map(pessoa.get(), PessoaModeloResponseDetalhe.class), 
                 HttpStatus.OK
             );
         }

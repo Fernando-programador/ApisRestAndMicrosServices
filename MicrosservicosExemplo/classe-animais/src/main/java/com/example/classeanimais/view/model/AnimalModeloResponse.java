@@ -2,7 +2,7 @@ package com.example.classeanimais.view.model;
 
 public class AnimalModeloResponse {
     private Integer id;
-    private String dono;
+    private Integer dono;
     private String nome;
     private Integer idade;
     private String raca;
@@ -17,11 +17,11 @@ public class AnimalModeloResponse {
         this.id = id;
     }
 
-    public String getDono() {
+    public Integer getDono() {
         return dono;
     }
 
-    public void setDono(String dono) {
+    public void setDono(Integer dono) {
         this.dono = dono;
     }
 
