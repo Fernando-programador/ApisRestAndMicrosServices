@@ -1,0 +1,85 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch ClasseAnimaisApplication",
+            "request": "launch",
+            "mainClass": "com.example.classeanimais.ClasseAnimaisApplication",
+            "projectName": "classe-animais"
+        },
+        {
+            "type": "java",
+            "name": "Launch GatewayServiceApplication",
+            "request": "launch",
+            "mainClass": "com.example.gatewayservice.GatewayServiceApplication",
+            "projectName": "gateway-service"
+        },
+        {
+            "type": "java",
+            "name": "Launch GatewayZuul",
+            "request": "launch",
+            "mainClass": "coom.meuexemplo.zuulservice.GatewayZuul",
+            "projectName": "zuul-service"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-EurekaServiceApplication<eureka-service>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.meuexemplo.eurekaservice.EurekaServiceApplication",
+            "projectName": "eureka-service",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-ZuulServiceApplication<zuul-service>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "coom.meuexemplo.zuulservice.ZuulServiceApplication",
+            "projectName": "zuul-service",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-AnimaisMsApplication<animais-ms>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "br.com.teste.animaisms.AnimaisMsApplication",
+            "projectName": "animais-ms",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-PessoasMsApplication<pessoas-ms>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "br.com.teste.primeirorest.PessoasMsApplication",
+            "projectName": "pessoas-ms",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-ClassePessoaApplication<classe-pessoa>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.example.classepessoa.ClassePessoaApplication",
+            "projectName": "classe-pessoa",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-GatewayService2Application<gateway-service2>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.example.gatewayservice2.GatewayService2Application",
+            "projectName": "gateway-service2",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
