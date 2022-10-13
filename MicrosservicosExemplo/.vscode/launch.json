@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch ConfigAppApplication",
+            "request": "launch",
+            "mainClass": "com.example.configapp.ConfigAppApplication",
+            "projectName": "config-app"
+        },
+        {
+            "type": "java",
             "name": "Launch ClasseAnimaisApplication",
             "request": "launch",
             "mainClass": "com.example.classeanimais.ClasseAnimaisApplication",
