@@ -1,4 +1,4 @@
-package com.autenticacao.gestao.Service;
+package com.autenticacao.gestao.Security;
 
 import java.io.Serializable;
 import java.sql.Date;
