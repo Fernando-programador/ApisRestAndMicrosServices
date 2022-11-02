@@ -1,7 +1,6 @@
 package com.autenticacao.gestao.Security;
 
 import java.io.IOException;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.InputMismatchException;
 import java.util.Optional;
@@ -20,8 +19,6 @@ import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 import org.springframework.web.filter.OncePerRequestFilter;
 
-import com.autenticacao.gestao.Model.Usuario;
-
 @Component
 public class JWTAuthenticationFilter extends OncePerRequestFilter {
 
@@ -35,47 +32,45 @@ public class JWTAuthenticationFilter extends OncePerRequestFilter {
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
             throws ServletException, IOException {
-        //pego o token de dentro da requisição       
+        // pego o token de dentro da requisição
         String token = obterToken(request);
 
-        //pego o id do usuario que está dentro do token
+        // pego o id do usuario que está dentro do token
         Optional<Long> id = jwtService.obterIdUsuario(token);
 
-        if(!id.isPresent()){
+        if (!id.isPresent()) {
             throw new InputMismatchException("TOKEN INVÁLIDO");
         }
 
-        //pego o usuario dono do token pelo seu id
+        // pego o usuario dono do token pelo seu id
         UserDetails usuario = customUserDetailsService.obterPorId(id.get());
 
-        //verificando se o usuario esta autenticado ou não
-        //aqui tbm poderiamos validar as permissões.
-        UsernamePasswordAuthenticationToken autenticacao = new UsernamePasswordAuthenticationToken(usuario, null, Collections.emptyList());
+        // verificando se o usuario esta autenticado ou não
+        // aqui tbm poderiamos validar as permissões.
+        UsernamePasswordAuthenticationToken autenticacao = new UsernamePasswordAuthenticationToken(usuario, null,
+                Collections.emptyList());
 
-        //Mudando a autenticação para a propria requisição
+        // Mudando a autenticação para a propria requisição
         autenticacao.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
-        
-        // repassando a autenticação para o contexto do security
-        //a partir de agora o java faz o restante
-        SecurityContextHolder.getContext().setAuthentication(autenticacao);
 
+        // repassando a autenticação para o contexto do security
+        // a partir de agora o java faz o restante
+        SecurityContextHolder.getContext().setAuthentication(autenticacao);
 
     }
 
-    private String obterToken(HttpServletRequest request){
+    private String obterToken(HttpServletRequest request) {
 
-              String token = request.getHeader("Authorization");
+        String token = request.getHeader("Authorization");
 
-              //verifica se veio alguma coisa sem ser espaços em brancos dentro do token
-              //ele é importado da classe spring frameworks
-              if (StringUtils.hasText(token)){
-                return null;
+        // verifica se veio alguma coisa sem ser espaços em brancos dentro do token
+        // ele é importado da classe spring frameworks
+        if (StringUtils.hasText(token)) {
+            return null;
 
+        }
+        return token.substring(7);
 
-              }
-                return token.substring(7);
-
-          }
+    }
 
 }
-
